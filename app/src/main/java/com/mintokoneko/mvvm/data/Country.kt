@@ -1,4 +1,4 @@
-package com.mintokoneko.helloworld.repository.data
+package com.mintokoneko.mvvm.data
 
 data class Country(
     val name: String,
