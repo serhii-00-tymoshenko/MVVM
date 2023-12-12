@@ -36,13 +36,11 @@ class SettingsFragment : Fragment() {
     }
 
     private fun setOnClickListeners() {
-        setLogOutListener()
-    }
-
-    private fun setLogOutListener() {
-        binding.logOut.setOnClickListener {
-            settingsViewModel.logOut()
-            beginLoginTransaction()
+        binding.apply {
+            logOut.setOnClickListener {
+                settingsViewModel.logOut()
+                beginLoginTransaction()
+            }
         }
     }
 

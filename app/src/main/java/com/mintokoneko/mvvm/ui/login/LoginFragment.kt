@@ -36,17 +36,15 @@ class LoginFragment : Fragment() {
     }
 
     private fun setOnClickListeners() {
-        setLoginListener()
-    }
+        binding.apply {
+            login.setOnClickListener {
+                val login = binding.loginField.editText?.text.toString()
+                val password = binding.passwordField.editText?.text.toString()
 
-    private fun setLoginListener() {
-        binding.login.setOnClickListener {
-            val login = binding.loginField.editText?.text.toString()
-            val password = binding.passwordField.editText?.text.toString()
-
-            if (login.isNotEmpty() && password.isNotEmpty()) {
-                val credentials = Credentials(login, password)
-                loginViewModel.changeCredentials(credentials)
+                if (login.isNotEmpty() && password.isNotEmpty()) {
+                    val credentials = Credentials(login, password)
+                    loginViewModel.changeCredentials(credentials)
+                }
             }
         }
     }
