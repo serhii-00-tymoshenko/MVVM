@@ -19,7 +19,10 @@ class ContentViewModel(
     init {
         val data = getDataFromRepository()
         setCountries(data)
-        putDataToRepository(data)
+
+        if (data.isEmpty()) {
+            putDataToRepository(data)
+        }
     }
 
     private fun getDataFromRepository(): List<Country> = contentRepository.getData()
