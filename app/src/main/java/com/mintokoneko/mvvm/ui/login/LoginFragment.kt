@@ -32,6 +32,10 @@ class LoginFragment : Fragment() {
 
         setLoginViewModel(this, context)
         initObservers()
+        setOnClickListeners()
+    }
+
+    private fun setOnClickListeners() {
         setLoginListener()
     }
 

@@ -32,6 +32,10 @@ class SettingsFragment : Fragment() {
         val context = requireContext()
 
         setSettingsViewModel(this, context)
+        setOnClickListeners()
+    }
+
+    private fun setOnClickListeners() {
         setLogOutListener()
     }
 
